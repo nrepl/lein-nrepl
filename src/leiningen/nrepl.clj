@@ -37,7 +37,6 @@
   All of them are collected converted to Clojure data structures, collected into a
   map and passed to `start-nrepl`."
   [project & args]
-  (println args)
   (let [profile (or (:nrepl (:profiles project)) nrepl-profile)
         project (lproject/merge-profiles project [profile])]
     (leval/eval-in-project
