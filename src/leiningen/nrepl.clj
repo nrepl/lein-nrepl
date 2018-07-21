@@ -14,7 +14,7 @@
        (map vec)
        (into {})))
 
-(def nrepl-profile {:dependencies [['nrepl/lein-nrepl "0.1.0-SNAPSHOT"]]})
+(def nrepl-profile {:dependencies [['nrepl/lein-nrepl "0.1.0"]]})
 
 (defn nrepl
   "Start a headless nREPL server within your project's context.
