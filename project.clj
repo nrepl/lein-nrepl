@@ -1,11 +1,11 @@
-(defproject nrepl/lein-nrepl "0.1.0"
+(defproject nrepl/lein-nrepl "0.1.1"
   :description "A lein plugin to start nREPL"
   :url "https://github.com/nrepl/lein-nrepl"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :eval-in-leiningen true
 
-  :dependencies [[nrepl "0.4.2"]]
+  :dependencies [[nrepl "0.4.3"]]
 
   :deploy-repositories [["clojars" {:url "https://clojars.org/repo"
                                     :username :env/clojars_username

@@ -18,7 +18,7 @@ forever).
 
 ## Usage
 
-Put `[nrepl/lein-nrepl "0.1.0"]` into the `:plugins` vector of your `:user`
+Put `[nrepl/lein-nrepl "0.1.1"]` into the `:plugins` vector of your `:user`
 profile.
 
 Afterwards run the following command:
@@ -27,14 +27,7 @@ Afterwards run the following command:
 
 That will start an nREPL server with on a random port.
 
-You can start a CIDER-capable server like this:
-
-    $ lein nrepl :middleware "['cider.nrepl/cider-middleware]"
-
-Note that this currently requires `cider-nrepl` 0.19.0-SNAPSHOT to be in your deps,
-as earlier `cider-nrepl` releases depend on the legacy `tools.nrepl`.
-
-## Supported Options
+### Supported Options
 
 * `:port` — defaults to 0, which autoselects an open port
 
@@ -48,6 +41,15 @@ as earlier `cider-nrepl` releases depend on the legacy `tools.nrepl`.
 representing middleware you wish to mix in to the nREPL handler. Vars can
 resolve to a sequence of vars, in which case they'll be flattened into the
 list of middleware.
+
+### Using with CIDER
+
+You can start a CIDER-capable server like this:
+
+    $ lein nrepl :middleware "['cider.nrepl/cider-middleware]"
+
+Note that this currently requires `cider-nrepl` 0.19.0-SNAPSHOT to be in your deps,
+as earlier `cider-nrepl` releases depend on the legacy `tools.nrepl`.
 
 ## License
 
