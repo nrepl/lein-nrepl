@@ -49,7 +49,33 @@ You can start a CIDER-capable server like this:
     $ lein nrepl :middleware "['cider.nrepl/cider-middleware]"
 
 Note that this currently requires `cider-nrepl` 0.19.0-SNAPSHOT to be in your deps,
-as earlier `cider-nrepl` releases depend on the legacy `tools.nrepl`.
+as earlier `cider-nrepl` releases depend on the legacy `tools.nrepl`. You can simply put
+the dependency in your `:dev` profile (it should be a regular dependency, not a plugin).
+
+Afterwards you can simply do `C-c C-x c c` to connect from CIDER to the running server.
+
+Using this with `cider-jack-in` is a bit more involved currently as
+you can't just replace `lein repl` with `lein nrepl` in your CIDER
+config, because they function a bit differently.  If you want to use
+`lein nrepl` with `cider-jack-in` it's current best to simply disable
+`cider-inject-dependencies-at-jack-in` and rely on deps specified in
+your profiles. Here's a simple Emacs config:
+
+```
+(setq cider-inject-dependencies-at-jack-in nil)
+(setq lein-parameters "nrepl")
+```
+
+And here's a sample `profiles.clj` file for you:
+
+``` clojure
+{:user
+ {:dependencies [[cider/cider-nrepl "0.19.0-SNAPSHOT"]]}
+ {:plugins [[nrepl/lein-nrepl "0.1.1"]]}}
+```
+
+**You can safely ignore the version mismatch warning you'll currently
+get with CIDER 0.18-snapshot.**
 
 ## License
 
