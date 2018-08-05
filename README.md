@@ -70,12 +70,9 @@ And here's a sample `profiles.clj` file for you:
 
 ``` clojure
 {:user
- {:dependencies [[cider/cider-nrepl "0.19.0-SNAPSHOT"]]}
+ {:dependencies [[cider/cider-nrepl "0.18.0-SNAPSHOT"]]}
  {:plugins [[nrepl/lein-nrepl "0.1.1"]]}}
 ```
-
-**You can safely ignore the version mismatch warning you'll currently
-get with CIDER 0.18-snapshot.**
 
 ## License
 
