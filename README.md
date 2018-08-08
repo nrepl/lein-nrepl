@@ -48,7 +48,7 @@ You can start a CIDER-capable server like this:
 
     $ lein nrepl :middleware "['cider.nrepl/cider-middleware]"
 
-Note that this currently requires `cider-nrepl` 0.19.0-SNAPSHOT to be in your deps,
+Note that this currently requires `cider-nrepl` 0.18.0+ to be in your deps,
 as earlier `cider-nrepl` releases depend on the legacy `tools.nrepl`. You can simply put
 the dependency in your `:dev` profile (it should be a regular dependency, not a plugin).
 
@@ -70,7 +70,7 @@ And here's a sample `profiles.clj` file for you:
 
 ``` clojure
 {:user
- {:dependencies [[cider/cider-nrepl "0.18.0-SNAPSHOT"]]}
+ {:dependencies [[cider/cider-nrepl "0.18.0"]]}
  {:plugins [[nrepl/lein-nrepl "0.1.2"]]}}
 ```
 
