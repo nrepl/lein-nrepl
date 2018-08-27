@@ -37,10 +37,15 @@ That will start an nREPL server with on a random port.
 * `:handler` — the nREPL message handler to use for each incoming connection;
   defaults to the result of `(nrepl.server/default-handler)`
 
-* `:middleware` - a sequence of vars or string which can be resolved to vars,
+* `:middleware` — a sequence of vars or string which can be resolved to vars,
 representing middleware you wish to mix in to the nREPL handler. Vars can
 resolve to a sequence of vars, in which case they'll be flattened into the
 list of middleware.
+
+* `:block` — Defaults to `true`. Set it to `false` for relinquishing control
+  to the next Leiningen task: e.g `lein do nrepl :block false, test-refresh`.
+  Note that with a `false` value and no next Lein task to run,
+  lein-nrepl will immediately close.
 
 ### Using with CIDER
 

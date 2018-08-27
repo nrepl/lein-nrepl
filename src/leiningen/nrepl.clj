@@ -12,7 +12,8 @@
        (map read-string)
        (partition 2)
        (map vec)
-       (into {})))
+       (into {})
+       (merge {:block true})))
 
 (def nrepl-profile {:dependencies [['nrepl/lein-nrepl "0.1.2"]]})
 
@@ -34,14 +35,21 @@
      resolve to a sequence of vars, in which case they'll be flattened into the
      list of middleware.
 
+   * :block - Defaults to `true`. Set it to `false` for relinquishing control
+     to the next Leiningen task: e.g `lein do nrepl :block false, test-refresh`.
+     Note that with a `false` value and no next Lein task to run,
+     lein-nrepl will immediately close.
+
   All of them are collected converted to Clojure data structures, collected into a
   map and passed to `start-nrepl`."
   [project & args]
   (let [profile (or (:nrepl (:profiles project)) nrepl-profile)
-        project (lproject/merge-profiles project [profile])]
+        project (lproject/merge-profiles project [profile])
+        arg-map (convert-args args)]
     (leval/eval-in-project
      project
-     `(nrepl-core/start-nrepl ~(convert-args args))
-     '(require 'leiningen.nrepl.core)))
-  ;; block forever, so the process won't end after the server was started
-  @(promise))
+     `(nrepl-core/start-nrepl ~arg-map)
+     '(require 'leiningen.nrepl.core))
+    (when (:block arg-map)
+      ;; block forever, so the process won't end after the server was started
+      @(promise))))
