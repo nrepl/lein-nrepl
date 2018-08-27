@@ -15,7 +15,7 @@
        (into {})
        (merge {:block true})))
 
-(def nrepl-profile {:dependencies [['nrepl/lein-nrepl "0.1.2"]]})
+(def nrepl-profile {:dependencies [['nrepl/lein-nrepl "0.2.0"]]})
 
 (defn nrepl
   "Start a headless nREPL server within your project's context.

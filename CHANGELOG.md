@@ -2,6 +2,11 @@
 
 ### master (unreleased)
 
+### 0.2.0 (2018-08-27)
+
+* Add a `:block` option. This allows chaining the
+`nrepl` task with other Lein tasks when `:block` is false.
+
 ### 0.1.2 (2018-08-05)
 
 * Updated nREPL dep to 0.4.4.

@@ -18,7 +18,7 @@ forever).
 
 ## Usage
 
-Put `[nrepl/lein-nrepl "0.1.2"]` into the `:plugins` vector of your `:user`
+Put `[nrepl/lein-nrepl "0.2.0"]` into the `:plugins` vector of your `:user`
 profile.
 
 Afterwards run the following command:
@@ -76,7 +76,7 @@ And here's a sample `profiles.clj` file for you:
 ``` clojure
 {:user
  {:dependencies [[cider/cider-nrepl "0.18.0"]]}
- {:plugins [[nrepl/lein-nrepl "0.1.2"]]}}
+ {:plugins [[nrepl/lein-nrepl "0.2.0"]]}}
 ```
 
 ## License
