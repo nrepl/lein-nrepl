@@ -5,7 +5,7 @@
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :eval-in-leiningen true
 
-  :dependencies [[nrepl "0.4.4"]
+  :dependencies [[nrepl "0.4.5"]
                  [reply "0.4.2"]]
 
   :deploy-repositories [["clojars" {:url "https://clojars.org/repo"

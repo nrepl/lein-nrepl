@@ -5,6 +5,7 @@
 * Add a REPLy repl (like in `lein repl`).
 * Add a `:headless` option. This controls whether to start the
 interactive REPL or not.
+* Updated nREPL dep to 0.4.5.
 
 ### 0.2.0 (2018-08-27)
 
