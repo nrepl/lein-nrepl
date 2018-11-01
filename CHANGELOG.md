@@ -2,6 +2,8 @@
 
 ### master (unreleased)
 
+### 0.3.0 (2018-11-01)
+
 * Add a REPLy repl (like in `lein repl`).
 * Add a `:headless` option. This controls whether to start the
 interactive REPL or not.

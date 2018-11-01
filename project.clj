@@ -1,4 +1,4 @@
-(defproject nrepl/lein-nrepl "0.3.0-SNAPSHOT"
+(defproject nrepl/lein-nrepl "0.3.0"
   :description "A lein plugin to start nREPL"
   :url "https://github.com/nrepl/lein-nrepl"
   :license {:name "Eclipse Public License"
