@@ -35,10 +35,14 @@
      resolve to a sequence of vars, in which case they'll be flattened into the
      list of middleware.
 
+  * `:headless` - Defaults to `false`. Controls whether to start an interactive
+     REPL (powered by REPLy) or not.
+
    * :block - Defaults to `true`. Set it to `false` for relinquishing control
      to the next Leiningen task: e.g `lein do nrepl :block false, test-refresh`.
      Note that with a `false` value and no next Lein task to run,
-     lein-nrepl will immediately close.
+     lein-nrepl will immediately close. This option is ignored unless `:headless`
+     is also true.
 
   All of them are collected converted to Clojure data structures, collected into a
   map and passed to `start-nrepl`."
