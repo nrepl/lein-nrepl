@@ -1,7 +1,8 @@
 (ns leiningen.nrepl.core
   (:require
    [clojure.java.io :as io]
-   [nrepl.server :as nrepl.server]))
+   [nrepl.server :as nrepl.server]
+   [reply.main :as reply]))
 
 (defn- require-and-resolve
   [thing]
@@ -31,6 +32,15 @@
 (defn- build-handler
   [middleware]
   (apply nrepl.server/default-handler (->mw-list middleware)))
+
+(def default-opts {:color true :history-file ".nrepl-history"})
+
+(defn client [opts]
+  (let [p (or (:port opts) (try (slurp ".nrepl-port") (catch Throwable _)))
+        h (or (:bind opts) "127.0.0.1")
+        o (assoc (merge default-opts opts) :attach (str h ":" p))]
+    (assert (and h p) "host and/or port not specified for REPL client")
+    (reply/launch-nrepl o)))
 
 (defn start-nrepl
   "Starts a socket-based nREPL server. Accepts a map with the following keys:
@@ -64,4 +74,6 @@
       (spit port)
       (.deleteOnExit))
     (println (format "nREPL server started on port %d on host %s - nrepl://%s:%d" port bind bind port))
+    (when-not (opts :headless)
+      (client opts))
     server))

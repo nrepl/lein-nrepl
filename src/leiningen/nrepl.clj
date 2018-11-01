@@ -15,7 +15,7 @@
        (into {})
        (merge {:block true})))
 
-(def nrepl-profile {:dependencies [['nrepl/lein-nrepl "0.2.0"]]})
+(def nrepl-profile {:dependencies [['nrepl/lein-nrepl "0.3.0-SNAPSHOT"]]})
 
 (defn nrepl
   "Start a headless nREPL server within your project's context.
@@ -50,6 +50,6 @@
      project
      `(nrepl-core/start-nrepl ~arg-map)
      '(require 'leiningen.nrepl.core))
-    (when (:block arg-map)
+    (when (and (:block arg-map) (:headless arg-map))
       ;; block forever, so the process won't end after the server was started
       @(promise))))

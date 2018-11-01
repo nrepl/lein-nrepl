@@ -2,6 +2,10 @@
 
 ### master (unreleased)
 
+* Add a REPLy repl (like in `lein repl`).
+* Add a `:headless` option. This controls whether to start the
+interactive REPL or not.
+
 ### 0.2.0 (2018-08-27)
 
 * Add a `:block` option. This allows chaining the

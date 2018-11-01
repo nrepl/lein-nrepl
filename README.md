@@ -25,7 +25,8 @@ Afterwards run the following command:
 
     $ lein nrepl
 
-That will start an nREPL server with on a random port.
+That will start an nREPL server with on a random port and connect
+a [REPLy](https://github.com/trptcolin/reply)-powered REPL to it.
 
 ### Supported Options
 
@@ -42,10 +43,14 @@ representing middleware you wish to mix in to the nREPL handler. Vars can
 resolve to a sequence of vars, in which case they'll be flattened into the
 list of middleware.
 
+* `:headless` - Defaults to `false`. Controls whether to start an interactive
+REPL (powered by REPLy) or not.
+
 * `:block` — Defaults to `true`. Set it to `false` for relinquishing control
   to the next Leiningen task: e.g `lein do nrepl :block false, test-refresh`.
   Note that with a `false` value and no next Lein task to run,
-  lein-nrepl will immediately close.
+  lein-nrepl will immediately close. This option is ignored unless `:headless`
+  is also true.
 
 ### Using with CIDER
 
