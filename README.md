@@ -81,7 +81,7 @@ And here's a sample `profiles.clj` file for you:
 ``` clojure
 {:user
  {:dependencies [[cider/cider-nrepl "0.18.0"]]}
- {:plugins [[nrepl/lein-nrepl "0.2.0"]]}}
+ {:plugins [[nrepl/lein-nrepl "0.3.1"]]}}
 ```
 
 ## License
