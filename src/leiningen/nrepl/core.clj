@@ -75,5 +75,6 @@
       (.deleteOnExit))
     (println (format "nREPL server started on port %d on host %s - nrepl://%s:%d" port bind bind port))
     (when-not (opts :headless)
-      (client opts))
+      (client opts)
+      (System/exit 0))
     server))
