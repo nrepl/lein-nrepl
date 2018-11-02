@@ -18,7 +18,7 @@ forever).
 
 ## Usage
 
-Put `[nrepl/lein-nrepl "0.3.0"]` into the `:plugins` vector of your `:user`
+Put `[nrepl/lein-nrepl "0.3.1"]` into the `:plugins` vector of your `:user`
 profile.
 
 Afterwards run the following command:

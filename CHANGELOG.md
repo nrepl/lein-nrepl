@@ -2,6 +2,10 @@
 
 ### master (unreleased)
 
+### 0.3.1 (2018-11-02)
+
+* Fix a hang after exiting the REPL.
+
 ### 0.3.0 (2018-11-01)
 
 * Add a REPLy repl (like in `lein repl`).
