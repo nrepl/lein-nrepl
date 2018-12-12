@@ -2,6 +2,10 @@
 
 ### master (unreleased)
 
+### 0.3.2 (2018-12-12)
+
+* Bump the nREPL dep to 0.5.3 and the REPLy dep to 0.4.3.
+
 ### 0.3.1 (2018-11-02)
 
 * Fix a hang after exiting the REPL.
